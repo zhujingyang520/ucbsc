@@ -48,9 +48,34 @@ by default). The generated file includes:
  automatically from \*.lib if the library compiler is installed on the system.
 - \*.lef: ASCII-format of abstract layout (inputs for Place and Route, such 
  as Encounter).   
+ 
+## 3. ASIC FLow
+Now that we have added the desired SRAM configuration, we can use the ASIC tools to generate layout for the SRAM val/rdy wrapper. In this section, we will go through the steps manually, and in the next section we will use the automated ASIC flow.
+```
+ `default_nettype none
+ module SRAM_64x64_1P
+ (
+   input  wire [   5:0] A1,
+   input  wire [   0:0] CE1,
+   input  wire [   0:0] CSB1,
+   input  wire [  63:0] I1,
+   output wire [  63:0] O1,
+   input  wire [   0:0] OEB1,
+   input  wire [   7:0] WBM1,
+   input  wire [   0:0] WEB1
+ );
 
+ endmodule // SRAM_64x64_1P
+ `default_nettype wire
+ ```
+Notice that this SRAM module is empty! In other words, in the blackbox Verilog file, all SRAMs are implemented as “blackboxes” with no internal functionality. If we included the behavioral implementation of the SRAM, then Synopsys DC would try to synthesize the SRAM as opposed to using the SRAM macro.
+
+For more info, please refer to [ece5745](https://cornell-ece5745.github.io/ece5745-tut8-sram/).
 
 ## History
+
+3/16/2021: HaFred
+ - Append the ASIC flow with CACTI
 
 2/7/2018: Jingyang Zhu
   - Add README
