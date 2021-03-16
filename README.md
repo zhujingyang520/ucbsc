@@ -28,8 +28,12 @@ pip install Cheetah
 First, we need to prepare the configuration file to specify the memory 
 specification, such as the memory width (in bits), depth, operation corner and 
 etc. A sampled configuration file `sample.conf` is provided to serve as a 
-reference. Then the top Python wrapper `ucbsc` can be called to generate the 
-all the library files for ASIC design flow. The configuration filename should
+reference. 
+
+Note that in the cacti6.5, default generation is to issue `./cacti -infile cache.cfg
+`. Then the top Python wrapper `ucbsc` can be called to generate the 
+all the library files for ASIC design flow, to sub the default version with Python wrapper.
+The configuration filename should
 be input as an argument of the `ucbsc`. For example, we can use the following
 command to generate the sampled library files:
 ```bash
