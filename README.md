@@ -30,8 +30,8 @@ specification, such as the memory width (in bits), depth, operation corner and
 etc. A sampled configuration file `sample.conf` is provided to serve as a 
 reference. 
 
-Note that in the cacti6.5, default generation is to issue `./cacti -infile cache.cfg
-`. Then the top Python wrapper `ucbsc` can be called to generate the 
+Note that in the cacti6.5, default generation is to issue `./cacti -infile cache.cfg`. 
+Then the top Python wrapper `ucbsc` can be called to generate the 
 all the library files for ASIC design flow, to sub the default version with Python wrapper.
 The configuration filename should
 be input as an argument of the `ucbsc`. For example, we can use the following
